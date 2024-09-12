@@ -18,13 +18,17 @@ def num():
     print(len(sentence))
 
 def madlibs():
-    verb_one = ''
-    verb_two = ''
-    noun = ''
-    number = ''
-    guest = ''
-    madlib = input(f'It was a dark and stormy {noun}. You were planning to {verb_one} before it began raining. Suddenly, your camera showed {guest} {verb_two} toward your house! They ')
-    
+ 
+    noun_one = input('noun?')
+    verb_one = input('verb?')
+    guest = input('guest?')
+    verb_two = input('verb?')
+    number = input('number?')  
+    noun_two = input('noun?')
+    verb_three = input('verb?')
+
+    madlib = print(f'It was a dark and stormy {noun_one}. You were planning to {verb_one} before it began raining. Suddenly, your camera showed {guest} {verb_two} toward your house! They were holding {number} {noun_two}! You let them in and they {verb_three} with their {number} {noun_two}')
+    print(madlib)
 
 '''## Challenge
 Let's create a function that determines if a number is odd or even
@@ -39,3 +43,14 @@ Create a function that accepts an input and determines all factors of the number
 
 Create a function that accepts 2 arguments. Find the greatest common factor between those numbers. 
 '''
+def even_or_odd():
+    num = int(input('Write a number'))
+    if type(num/2) == float:
+        print('This is odd')
+    else:
+        print("This is even")
+
+def tip():
+    bill = int(input('What was the price of your bill?'))
+    quality = input('Write the quality of the service: bad, okay, good, or great.').strip()
+    if 

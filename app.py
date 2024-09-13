@@ -14,7 +14,7 @@ story using the variables from step 1
 # sentence = input('Write a sentence.')
 
 def num():
-    sentence = input('Write a sentence')
+    sentence = input('Write a sentence').split()
     print(len(sentence))
 
 def madlibs():
@@ -27,7 +27,7 @@ def madlibs():
     noun_two = input('noun?')
     verb_three = input('verb?')
 
-    madlib = print(f'It was a dark and stormy {noun_one}. You were planning to {verb_one} before it began raining. Suddenly, your camera showed {guest} {verb_two} toward your house! They were holding {number} {noun_two}! You let them in and they {verb_three} with their {number} {noun_two}')
+    madlib = print(f'It was a dark and stormy {noun_one}. You were planning to {verb_one} before it began raining. Suddenly, your camera showed {guest} {verb_two} toward your house! They were holding {number} {noun_two}! You let them in and they {verb_three} with their {number} {noun_two} You died.....')
     print(madlib)
 
 '''## Challenge
@@ -51,6 +51,29 @@ def even_or_odd():
         print("This is even")
 
 def tip():
+    quality = ("bad", "okay", "good", "great")
+    price = 0
     bill = int(input('What was the price of your bill?'))
-    quality = input('Write the quality of the service: bad, okay, good, or great.').strip()
-    if 
+    quality = input('Write the quality of the service: bad, okay, good, or great.').strip().lower()
+    if quality == "bad":
+        price = bill 
+    elif quality == "okay":
+        price = 1.15 * bill
+    elif quality == "good":
+        price = 1.2 * bill        
+    elif quality == 'great':
+        price = 1.25 * bill
+    print(f'Your final price is {price}')
+
+def factors():
+    factors = []
+    num = int(input("What's your number? ONLY INTEGERS!!!!"))
+    for i in range(num):
+        divisor = 2 
+        if type(num/divisor) == int:       
+            factors.append(num/divisor)
+        divisor += 1
+    print(f'Factors are {factors}')
+    
+factors()
+

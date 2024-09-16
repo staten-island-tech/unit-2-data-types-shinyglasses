@@ -68,12 +68,18 @@ def tip():
 def factors():
     factors = []
     num = int(input("What's your number? ONLY INTEGERS!!!!"))
+    divisor = 1
     for i in range(num):
-        divisor = 2 
-        if type(num/divisor) == int:       
-            factors.append(num/divisor)
+        if type(num//divisor) == int:
+            factors.append(num//divisor)
         divisor += 1
+    factors = list(set(factors))
     print(f'Factors are {factors}')
-    
-factors()
 
+def gcf(num, num2):
+    factors_num = []
+    factors_numtwo = []
+    divisor = 1
+  
+#need to find prime factors n then multiply
+gcf(12,24)

@@ -79,11 +79,12 @@ def factors():
 def gcf(num, num2):
     factors_num = []
     factors_numtwo = []
-    def prime(num):
-        for i in range(2,int(num):
-          if num%i != 0:
-
-
+    for i in range(2,int(num)):
+        if num%i != 0:
+                factors_num.append(i)
+    for i in range(2,int(num2)):
+        if num2%i != 0:
+            factors_numtwo.append(i)
     print(factors_num, factors_numtwo)
 #need to find prime factors n then multiply all the prime factors the two numbers have
 gcf(12,24)

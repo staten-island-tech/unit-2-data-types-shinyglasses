@@ -79,12 +79,20 @@ def factors():
 def gcf(num, num2):
     factors_num = []
     factors_numtwo = []
-    for i in range(2,int(num)):
-        if num%i != 0:
-                factors_num.append(i)
-    for i in range(2,int(num2)):
-        if num2%i != 0:
-            factors_numtwo.append(i)
-    print(factors_num, factors_numtwo)
+    commonfactors = []
+    gcf = 0
+    smaller = 0
+    if num > num2:
+        num2 = smaller
+    else: 
+        num = smaller
+    for i in range(2,int(smaller)):
+         if num%i == 0 and num2%i == 0:
+            commonfactors.append(i)
+    for i in range(len(commonfactors)):
+        number = commonfactors[i]
+        next_num = commonfactors[i+1]
+        gcf.append(number * next_num)
+    print(commonfactors)
 #need to find prime factors n then multiply all the prime factors the two numbers have
 gcf(12,24)

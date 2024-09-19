@@ -11,8 +11,6 @@ step 1
 story using the variables from step 1
 - Print the f string after the user has input data'''
 
-# sentence = input('Write a sentence.')
-
 def num():
     sentence = input('Write a sentence').split()
     print(len(sentence))
@@ -20,14 +18,14 @@ def num():
 def madlibs():
  
     noun_one = input('noun?')
-    verb_one = input('verb?')
-    guest = input('guest?')
+    verb_one = input('action verb?')
+    guest = input('celebrity guest?')
     verb_two = input('verb?')
     number = input('number?')  
-    noun_two = input('noun?')
+    noun_two = input('singular noun?')
     verb_three = input('verb?')
-
-    madlib = print(f'It was a dark and stormy {noun_one}. You were planning to {verb_one} before it began raining. Suddenly, your camera showed {guest} {verb_two} toward your house! They were holding {number} {noun_two}! You let them in and they {verb_three} with their {number} {noun_two} You died.....')
+    disease = input('disease?')
+    madlib = (f'It was a dark and stormy {noun_one}. You were planning to {verb_one} before it began raining. Suddenly, your camera showed {guest} {verb_two} toward your house! They were holding {number} {noun_two}! You let them in and they {verb_three} with their {number} {noun_two} You died..... The doctors said it was from {disease}')
     print(madlib)
 
 '''## Challenge
@@ -51,20 +49,24 @@ def even_or_odd():
         print("This is even")
 
 def tip():
-    quality = ("bad", "okay", "good", "great")
-    price = 0
+    quality = ["bad", "okay", "good", "great"]
+    tip = 0
     bill = int(input('What was the price of your bill?'))
+    while bill == 0:
+        bill = int(input('YO WHY ARE YOU TRYING TO CALCULATE A TIP WHEN THE BILL IS NOTHING?!?!?!?! PLEASE GIVE AN ACTUAL NUMBER!!!'))
+        if bill != 0:
+            break
     quality = input('Write the quality of the service: bad, okay, good, or great.').strip().lower()
     if quality == "bad":
-        price = bill 
+        tip = 0
     elif quality == "okay":
-        price = 1.15 * bill
+        tip = .15 * bill
     elif quality == "good":
-        price = 1.2 * bill        
+        tip = .2 * bill        
     elif quality == 'great':
-        price = 1.25 * bill
-    print(f'Your final price is {price}')
-
+        tip = .25 * bill
+    print(f'Your final bill is {bill + tip}, since the bill is {bill} and the tip is {tip}')
+tip()
 def factors():
     factors = []
     num = int(input("What's your number? ONLY INTEGERS!!!!"))
@@ -77,22 +79,14 @@ def factors():
     print(f'Factors are {factors}')
 
 def gcf(num, num2):
-    factors_num = []
-    factors_numtwo = []
-    commonfactors = []
     gcf = 0
-    smaller = 0
+    smaller = min(num, num2)  
     if num > num2:
         num2 = smaller
     else: 
         num = smaller
-    for i in range(2,int(smaller)):
-         if num%i == 0 and num2%i == 0:
-            commonfactors.append(i)
-    for i in range(len(commonfactors)):
-        number = commonfactors[i]
-        next_num = commonfactors[i+1]
-        gcf.append(number * next_num)
-    print(commonfactors)
-#need to find prime factors n then multiply all the prime factors the two numbers have
-gcf(12,24)
+    for i in range(2, smaller+1):
+        if num%i == 0 and num2%i == 0:
+           gcf = i
+    print(f'The greatest common factor of {num} and {num2} is {gcf}')
+#iterate over all common factors and it ends when you get to the gcf

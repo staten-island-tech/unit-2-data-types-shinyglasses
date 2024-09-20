@@ -64,7 +64,7 @@ def tip():
     elif quality == 'great':
         tip = .25 * bill
     print(f'Your final bill is {bill + tip}, since the bill is {bill} and the tip is {tip}')
-tip()
+
 def factors():
     factors = []
     num = int(input("What's your number? ONLY INTEGERS!!!!"))

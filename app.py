@@ -54,8 +54,6 @@ def tip():
     bill = int(input('What was the price of your bill?'))
     while bill == 0:
         bill = int(input('YO WHY ARE YOU TRYING TO CALCULATE A TIP WHEN THE BILL IS NOTHING?!?!?!?! PLEASE GIVE AN ACTUAL NUMBER!!!'))
-        if bill != 0:
-            break
     quality = input('Write the quality of the service: bad, okay, good, or great.').strip().lower()
     if quality == "bad":
         tip = 0
@@ -66,7 +64,7 @@ def tip():
     elif quality == 'great':
         tip = .25 * bill
     print(f'Your final bill is {bill + tip}, since the bill is {bill} and the tip is {tip}')
-
+tip()
 def factors():
     factors = []
     num = int(input("What's your number? ONLY INTEGERS!!!!"))

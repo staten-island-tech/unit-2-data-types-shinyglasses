@@ -66,7 +66,7 @@ def tip():
     elif quality == 'great':
         tip = .25 * bill
     print(f'Your final bill is {bill + tip}, since the bill is {bill} and the tip is {tip}')
-tip()
+
 def factors():
     factors = []
     num = int(input("What's your number? ONLY INTEGERS!!!!"))
@@ -79,14 +79,9 @@ def factors():
     print(f'Factors are {factors}')
 
 def gcf(num, num2):
-    gcf = 0
-    smaller = min(num, num2)  
-    if num > num2:
-        num2 = smaller
-    else: 
-        num = smaller
-    for i in range(2, smaller+1):
+    gcf = 0  
+    for i in range(1, num + 1):
         if num%i == 0 and num2%i == 0:
            gcf = i
     print(f'The greatest common factor of {num} and {num2} is {gcf}')
-#iterate over all common factors and it ends when you get to the gcf
+#iterate over all common factors and it ends when you get to the gcf.
